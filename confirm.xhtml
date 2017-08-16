@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Booking</title>
+    </h:head>
+    <h:body>
+        <h2>Accomodation</h2>
+        Your request summary. If this is correct, press <b>Confirmed</b> to send your request, or <b>Back</b> to edit your request.
+        <h:form>
+            <h:panelGrid columns="2">
+                Name: <h:panelGroup>
+                    <h:outputText value="#{reserve.firstName}"/><h:outputText value=" "/><h:outputText value="#{reserve.lastName}"/>
+                </h:panelGroup>
+                Check-in: <h:outputText value="#{reserve.checkIn}"/>
+                Check-out: <h:outputText value="#{reserve.checkOut}"/>
+                Number of rooms: <h:outputText value="#{reserve.numberOfRooms}"/>
+            </h:panelGrid>
+            <h:commandButton value="Back" action="index"/>
+            <h:commandButton value="Confirmed" action="#{reserve.sendRequest}"/>
+        </h:form>
+    </h:body>
+</html>
+
